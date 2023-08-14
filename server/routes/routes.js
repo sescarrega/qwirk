@@ -4,7 +4,7 @@ module.exports = function (app){
     // create one
     app.post("/api/qwirk", controller.createQwirk)
     // get one
-    app.get("/api/qwirk", controller.getQwirk)
+    app.get("/api/qwirk/:id", controller.getQwirk)
     // get all
     app.get("/api/qwirks", controller.getAllQwirks)
     // update one

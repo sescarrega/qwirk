@@ -1,11 +1,19 @@
 import './App.css';
+import{BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from"./views/Home";
+import Create from './views/Create';
+
 
 function App() {
   return (
-    <div className="App">
-      hi there from app.js
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/create" element={<Create/>}/>
 
-    </div>
+    </Routes>
+    </BrowserRouter>
+
   );
 }
 
