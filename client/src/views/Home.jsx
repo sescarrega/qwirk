@@ -26,7 +26,7 @@ const Home = () => {
     <div> 
         <div>
         <h1> Qwirks</h1>
-        <h3> Oddities from along the way...</h3>
+        <h3> oddities from along the way...</h3>
         </div>
         <div>
             <Link to={"/create"}> + Archive</Link>
