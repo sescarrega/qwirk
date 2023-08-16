@@ -44,6 +44,7 @@ const Home = () => {
                         <tr key={i}>  
                             <td>{qwirk.qwirkName}</td>
                             <td> {qwirk.oddity1}</td>
+                            <td><Link to={`/${qwirk._id}/edit`}>Edit</Link> </td>
                         </tr>
                     ))}
                 </tbody>

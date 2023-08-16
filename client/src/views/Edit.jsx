@@ -5,6 +5,8 @@ import {useParams, useNavigate, Link} from "react-router-dom"
 const Edit = () => {
     const {id} = useParams()
 
+    const [qwirk, setQwirk] = useState([])
+
     const [qwirkName,setQwirkName] = useState("")
     const [oddity1, setOddity1] = useState("")
 
@@ -30,6 +32,15 @@ const Edit = () => {
         .catch (err => console.log(err))
         
     }
+    const handleDelete = (e) => {
+        axios.delete(`http://localhost:8000/api/qwirk/${id}`)
+            .then (res => {
+                const filteredList = qwirk.filter((qwirk) => qwirk.id !== id)
+                setQwirk(filteredList)
+                navigate("/")
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
     <div>
@@ -44,7 +55,11 @@ const Edit = () => {
                 <p> Description</p>
                 <input type="text" name="oddity1" value={oddity1} onChange={e => setOddity1(e.target.value)}></input>
                 <button type='submit'> Edit Qwirk</button>
-            </form>
+        </form>
+        <div> 
+            <h2> Not so odd? </h2>
+        </div>
+        <button onClick={handleDelete}> Delete Qwirk</button>
 
     </div>
 
