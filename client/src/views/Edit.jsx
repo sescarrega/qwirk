@@ -54,7 +54,7 @@ const Edit = () => {
                 <input type="text" name='qwirkName' value={qwirkName} onChange={e => setQwirkName(e.target.value)} ></input>
                 <p> Description</p>
                 <input type="text" name="oddity1" value={oddity1} onChange={e => setOddity1(e.target.value)}></input>
-                <button type='submit'> Edit Qwirk</button>
+                <button type='submit'> Update Qwirk</button>
         </form>
         <div> 
             <h2> Not so odd? </h2>
